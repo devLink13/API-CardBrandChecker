@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API - CardBrandChecker</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #29aaef;
+        }
+        h2 {
+            color: #29aaef;
+            border-bottom: 2px solid #7b8387;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://github.com/devLink13" style="color: white; text-decoration: none;">
+            <img src="{{ url_for('static', filename='images/perfil.jpeg') }}" alt="Profile Picture" style="width: 50px; border-radius: 50%; float: right; margin-left: 10px;">
+        </a>
+        <div style="float: right; text-align: right; margin-right: 10px;">
+            <a href="https://github.com/devLink13" style="color: black; text-decoration: none; display: flex; align-items: center; margin-bottom: 5px; font-size: 12px; margin-top: 5px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 16px; vertical-align: middle; margin-right: 5px; margin-top: 2px;"> devLink13
+            </a>
+            <a href="https://www.linkedin.com/in/devLink13" style="color: black; text-decoration: none; display: flex; align-items: center; font-size: 12px; margin-top: 5px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width: 16px; vertical-align: middle; margin-right: 5px; margin-top: 2px;"> devLink13
+            </a>
+        </div>
+        <br><br>
+        <h1>CardBrandChecker</h1>
+        <p>Bem-vindo à API de Verificação de Bandeiras de Cartões. Aqui estão algumas informações úteis: </p>
+        <p>
+            Esta API permite que você verifique a bandeira e a validade de números de cartões de crédito.<br>
+            <strong>OBS: DESENVOLVIDO PARA FINS DE APRENDIZADO, NÃO UTILIZE DADOS REAIS DE CARTÕES DE CRÉDITO AQUI.</strong>
+            <br><br>
+            O algoritmo não implementa nenhum tipo de armazenamento de dados, logo o número enviado não é salvo, 
+            porém isso não quer dizer que você deva usar seu número de cartão real aqui. Use geradores de números
+            de cartão de crédito como o <a href="https://www.4devs.com.br/gerador_de_numero_cartao_credito" target="_blank">gerador do site 4DEVS</a>,
+            ou qualquer outro de sua confiança. Depois faça a validação do número gerado usando nossa API. 😊<br>
+            <br>
+            Sinta-se à vontade para clonar o repositório e fazer as modificações que bem quiser. 🤝
+        </p>
+        
+        <h2>Rotas Disponíveis</h2>
+        <ul>
+            <li><strong>GET /</strong> - Página inicial com informações sobre a API</li>
+            <li><strong>POST /checkCard/&lt;string:card_number&gt;</strong> - Verifica a bandeira e a validade de um número de cartão</li>
+        </ul>
+
+        <h2>Status da API</h2>
+        <p>A API está <strong>online</strong> e funcionando corretamente.</p>
+
+        <h2>Bandeiras Disponíveis</h2>
+        <ul style="display: flex; flex-wrap: wrap; gap: 10px; padding: 0;">
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_visa.png') }}" alt="Visa" style="width: 20px; vertical-align: middle;"> Visa
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_mastercad.png') }}" alt="MasterCard" style="width: 20px; vertical-align: middle;"> MasterCard
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_amex.png') }}" alt="American Express" style="width: 20px; vertical-align: middle;"> American Express
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_discover.png') }}" alt="Discover" style="width: 20px; vertical-align: middle;"> Discover
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_hiper.png') }}" alt="Hipercard" style="width: 20px; vertical-align: middle;"> Hipercard
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_elo.png') }}" alt="Elo" style="width: 20px; vertical-align: middle;"> Elo
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_aura.png') }}" alt="Aura" style="width: 20px; vertical-align: middle;"> Aura
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_sodexo.png') }}" alt="Sodexo" style="width: 20px; vertical-align: middle;"> Sodexo
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_enroute.png') }}" alt="Enroute" style="width: 20px; vertical-align: middle;"> Enroute
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_voyager.png') }}" alt="Voyager" style="width: 20px; vertical-align: middle;"> Voyager
+            </li>
+            <li style="background-color: #e0f7fa; padding: 10px; border-radius: 4px; list-style: none;">
+            <img src="{{ url_for('static', filename='images/logo_visaelectron.png') }}" alt="Visa Electron" style="width: 20px; vertical-align: middle;"> Visa Electron
+            </li>
+        </ul></li>
+
+        <h2>Usando a API</h2>
+        <p>Ao fazer uma requisição para a rota https://xxxxxx, você receberá um JSON com as seguintes informações:</p>
+        <div style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace;">
+        <pre><code>
+        {
+            "card_number": "O número do cartão verificado.",
+            "valid": "Um booleano indicando se o número do cartão é válido.",
+            "brand": "A bandeira do cartão (por exemplo, Visa, MasterCard)."
+        }
+        </code></pre>
+        </div>
+
+        <p>Exemplo real em Python:</p>
+        <div style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; font-family: monospace;">
+            <div style="display: flex; justify-content: space-around; margin-bottom: 10px;">
+            <button id="requestTab" onclick="showTab('request')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #e0f7fa; border: none; border-bottom: 2px solid #29aaef; transition: background-color 0.3s;">Request</button>
+            <button id="responseTab" onclick="showTab('response')" style="flex: 1; padding: 10px; cursor: pointer; background-color: #e0f7fa; border: none; transition: background-color 0.3s;">Response</button>
+            </div>
+            <div id="request" style="display: block; padding: 10px; background-color: #f0f0f0; border-radius: 4px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <pre><code>
+        import requests
+
+        url = "http://api.example.com/checkCard/5547340833279333"
+        response = requests.post(url)
+        print(response.json())
+            </code></pre>
+            </div>
+            <div id="response" style="display: none; padding: 10px; background-color: #f0f0f0; border-radius: 4px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <pre><code>
+        {
+        "card_number": "5547 3408 3327 9333",
+        "valid": true,
+        "flag": "MasterCard"
+        }
+            </code></pre>
+            </div>
+        </div>
+        <script>
+        function showTab(tab) {
+            document.getElementById('request').style.display = tab === 'request' ? 'block' : 'none';
+            document.getElementById('response').style.display = tab === 'response' ? 'block' : 'none';
+            document.getElementById('requestTab').style.borderBottom = tab === 'request' ? '2px solid #29aaef' : 'none';
+            document.getElementById('responseTab').style.borderBottom = tab === 'response' ? '2px solid #29aaef' : 'none';
+        }
+        </script>
+    </body>
+    <footer style="text-align: center; margin-top: 20px; padding: 10px; background-color: #aadefa; color: white; border-radius: 4px;">
+        <p>Developed by Wesley Link</p>
+        <p>
+            <a href="https://github.com/devLink13" style="color: white; text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 20px; vertical-align: middle;"> GitHub
+            </a> | 
+            <a href="https://github.com/seuusuario/seurepositorio" style="color: white; text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Repositório" style="width: 20px; vertical-align: middle;"> Repositório
+            </a>
+        </p>
+    </footer>
+</html>

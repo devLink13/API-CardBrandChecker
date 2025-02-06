@@ -16,7 +16,7 @@ def luhn_check(card_number):
 
 
 def load_prefixes():
-    with open("card_flags.json", "r", encoding="utf-8") as file:
+    with open("./json/card_flags.json", "r", encoding="utf-8") as file:
         card_flags = json.load(file)
 
     prefixes = set()
@@ -27,12 +27,12 @@ def load_prefixes():
 
 
 def get_card_flag(card_number):
-    with open("card_flags.json", "r", encoding="utf-8") as file:
+    with open("./json/card_flags.json", "r", encoding="utf-8") as file:
         card_flags = json.load(file)
 
     card_number = card_number.replace(" ", "")
     if not luhn_check(card_number):
-        return "Número de cartão inválido"
+        return False
 
     prefixes = load_prefixes()
     for i in range(4, 0, -1):
@@ -41,7 +41,8 @@ def get_card_flag(card_number):
                 if card_number[:i] in map(str, details["prefixos"]):
                     if len(card_number) in details["comprimento"]:
                         return flag
-    return "Bandeira desconhecida"
+    return -1
+    
 
 
 if __name__ == "__main__":
