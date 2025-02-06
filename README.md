@@ -1,8 +1,13 @@
 # API-CardBrandChecker
 
+## Leia com Atencão
+Esta API foi desenvolvida para uma atividade acadêmica de certificação, onde o principal objetivo era usar o GitHub Copilot como assistente de escrita de código para acelerar o desenvolvimento e aumentar a produtividade, portanto grande parte do código foi gerado pelo GitHub Copilot, e meu trabalho como desenvolvedor e aluno foi revisar e ajustar o código gerado para que ele atendesse aos requisitos do projeto. Desta forma deixo claro que possíveis bugs ou instabilidades podem ocorrer, e que o código pode não estar 100% otimizado, mas que o principal objetivo foi alcançado, que era o de aprender a usar o GitHub Copilot e entender como ele pode ser útil no desenvolvimento de software.
+
 ## Descrição do Projeto
 
-O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python utilizando o framework Flask. A principal funcionalidade deste projeto é verificar e identificar a bandeira de cartões de crédito com base em seus prefixos e comprimentos.
+O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python utilizando o framework Flask. A principal funcionalidade deste projeto é verificar e identificar a bandeira de cartões de crédito com base em seus prefixos e comprimentos. O algoritmo implementado é chamado de ***Alogiritmo de Luhn*** e é um algoritmo realmente usado para verificar a validade de números de cartões de crédito. O banco de dados implementado em SQLITE3 foi usado apenas para guardar informações sobre os prefixos de cada bandeira, os possíveis comprimentos e o nome da bandeira, logo não há nenhuma informação sensível armazenada no banco de dados. A escolha desta opção foi por questões de simplicidade e facilidade de implementação.
+
+
 
 ## Funcionalidades
 
@@ -117,6 +122,13 @@ Se a bandeira não for encontrada:
 }
 ```
 
+### Exemplos de possíveis usos para a API
+
+* Integrar com um sistema de pagamento para verificar a bandeira de um cartão de crédito.
+* Verificar a bandeira de um cartão de crédito em um aplicativo de e-commerce.
+* Validar números de cartões de crédito em um aplicativo de gerenciamento financeiro.
+
+**Nota**: Este projeto foi desenvolvido para fins educacionais e não deve ser usado em produção sem uma revisão completa do código.
 
 
 ### Requisitos
