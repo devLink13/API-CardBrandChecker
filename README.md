@@ -33,7 +33,7 @@ O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python
     | Visa Electron    | 4026, 4175, 4508, 4844, 4913, 4917                                       | 13, 14, 15, 16, 17, 18, 19    |
 
 
-### Estrutura do Projeto 
+### Estrutura do Projeto  
 
 ```
 .
