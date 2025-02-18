@@ -7,6 +7,10 @@ Esta API foi desenvolvida para uma atividade acadêmica de certificação, onde 
 
 O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python utilizando o framework Flask. A principal funcionalidade deste projeto é verificar e identificar a bandeira de cartões de crédito com base em seus prefixos e comprimentos. O algoritmo implementado é chamado de ***Alogiritmo de Luhn*** e é um algoritmo realmente usado para verificar a validade de números de cartões de crédito. O banco de dados implementado em SQLITE3 foi usado apenas para guardar informações sobre os prefixos de cada bandeira, os possíveis comprimentos e o nome da bandeira, logo não há nenhuma informação sensível armazenada no banco de dados. A escolha desta opção foi por questões de simplicidade e facilidade de implementação.
 
+![image](https://github.com/user-attachments/assets/4fa49ee2-b7c1-4228-a76c-a47ed748592d)
+![image](https://github.com/user-attachments/assets/0896ee08-634a-4706-8c98-3e13e3605316)
+![image](https://github.com/user-attachments/assets/7290213f-d977-4b6d-bb33-b30b28a9eedb)
+
 
 
 ## Funcionalidades
@@ -33,7 +37,7 @@ O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python
     | Visa Electron    | 4026, 4175, 4508, 4844, 4913, 4917                                       | 13, 14, 15, 16, 17, 18, 19    |
 
 
-### Estrutura do Projeto  
+## Estrutura do Projeto  
 
 ```
 .
@@ -50,7 +54,7 @@ O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python
 └── templates/
 ```
 
-### Como Executar
+## Como Executar
 
 1. **Clone o repositório**:
     ```bash
@@ -83,7 +87,7 @@ O projeto **API-CardBrandChecker** é uma aplicação web desenvolvida em Python
     ```
 7. **Acesse a aplicação**: Abra um navegador web e vá para a [página home](https://api-cardbrandchecker.onrender.com/) da API.
 
-### Exemplo de uso com Python
+## Exemplo de uso com Python
 
 Você pode usar a API para verificar a bandeira de um cartão de crédito com base em seu número. Abaixo está um exemplo de uso da API com Python:
 ```python
@@ -121,6 +125,10 @@ Se a bandeira não for encontrada:
     "flag": "not found"
 }
 ```
+
+### ROTAS DISPONÍVEIS
+* home: https://api-cardbrandchecker.onrender.com/
+* checkcard: https://api-cardbrandchecker.onrender.com/checkCard/<number-card>
 
 ### Exemplos de possíveis usos para a API
 
